@@ -1,0 +1,606 @@
+/* Reset e variáveis modernas */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-gradient: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+  --header-gradient: linear-gradient(to right, #f0f4f8, #e2e8f0);
+  --primary-gradient: linear-gradient(120deg, #0ea5e9, #0284c7);
+  --gold-gradient: linear-gradient(120deg, #f59e0b, #d97706);
+  --card-bg: #ffffff; 
+  --text-dark: #1e293b;
+  --text-light-gray: #64748b; 
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease; 
+  --badge-1: linear-gradient(120deg, #38bdf8, #0ea5e9); /* Azul */
+  --badge-2: linear-gradient(120deg, #34d399, #059669); /* Verde */
+  --badge-3: linear-gradient(120deg, #a78bfa, #7c3aed); /* Roxo */
+  --badge-4: linear-gradient(120deg, #9ca3af, #6b7280); /* Cinza */
+  --badge-5: linear-gradient(120deg, #f87171, #dc2626); /* Vermelho */
+  
+  /* Cores dos Botões */
+  --btn-primary-bg: #2a9d8f;
+  --btn-primary-hover: #268a7f;
+  --btn-secondary-bg: #6c757d;
+  --btn-secondary-hover: #5a6268;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* --- CABEÇALHO (FUNDO BRANCO) --- */
+header {
+  background: var(--card-bg); 
+  padding: 12px 24px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #e2e8f0; 
+}
+
+.logo {
+  font-size: 1.5rem; 
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: var(--text-dark); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none; 
+  text-decoration: none; 
+  cursor: pointer;
+  display: inline-block;
+  padding: 4px 0; 
+}
+
+/* --- BOTÃO DE ÍCONE ACESSIBILIDADE --- */
+.nav-right .icon-button {
+  background: transparent; 
+  border: none;
+  color: var(--text-light-gray); 
+  padding: 8px; 
+  border-radius: 50%; 
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: none; 
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-right .icon-button:hover {
+  transform: none; 
+  background: #f1f5f9; 
+  color: var(--text-dark); 
+  box-shadow: none; 
+}
+
+.nav-right .icon-button .material-symbols-outlined {
+  font-size: 24px; 
+}
+
+/* Conteúdo principal */
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Título H1 (usado nas páginas internas) */
+h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #0f172a, #334155);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 36px;
+  color: #475569;
+  font-size: 1.1rem;
+}
+
+/* Grid de checkpoints (index.html) */
+.checkpoints {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+  gap: 28px;
+}
+
+/* Card individual (index.html) */
+.checkpoint {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid #e2e8f0; 
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start; 
+  gap: 20px;
+  text-align: left; 
+}
+
+.checkpoint:hover {
+  transform: translateY(-5px); 
+  box-shadow: var(--shadow-hover), 0 0 0 2px #0ea5e9; 
+}
+
+.checkpoint-icon-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; 
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.material-symbols-outlined {
+  font-size: 28px;
+  font-variation-settings: 'FILL' 1; 
+}
+
+.checkpoint-icon-container.locked {
+  background: #e2e8f0;
+  color: var(--text-light-gray);
+}
+
+.checkpoint-text-content {
+  flex-grow: 1; 
+  display: flex; 
+  flex-direction: column;
+  height: 100%; 
+}
+
+.checkpoint-pretitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-light-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.checkpoint h3 {
+  color: #0f172a;
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.checkpoint p {
+  text-align: left; 
+  margin-bottom: 16px; 
+  color: var(--text-light-gray); 
+  font-size: 0.95rem;
+  flex-grow: 1; 
+}
+
+.badge-wrapper {
+  margin-top: auto; 
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0; 
+}
+
+.badge, .badge-bloqueado {
+  display: inline-block;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.badge-bloqueado {
+  background: #e2e8f0;
+  color: var(--text-light-gray);
+}
+
+
+.checkpoint.locked-card .checkpoint-pretitle,
+.checkpoint.locked-card .checkpoint-text-content h3,
+.checkpoint.locked-card .checkpoint-text-content p {
+  color: #adb5bd; 
+}
+
+.checkpoint.locked-card:hover {
+  transform: none;
+  box-shadow: var(--shadow); 
+}
+
+.final-boss {
+  background: #fffaf0; 
+  border: 1px solid #fed7aa;
+}
+
+/* --- NOVO: Card de Conteúdo Principal (Páginas Internas) --- */
+.main-content-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+  border: 1px solid #e2e8f0;
+}
+
+.main-content-card h1 {
+  margin-top: 0;
+}
+
+/* Botões - Estilo Base (Removido de 'button' genérico) */
+.btn {
+  font-family: inherit;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0,0,0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; 
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0, 0.15);
+}
+
+.btn .material-symbols-outlined {
+  font-size: 20px; 
+}
+
+/* NOVO: Botão Primário (Verde) */
+.btn-primary {
+  background: var(--btn-primary-bg);
+  color: white;
+}
+.btn-primary:hover {
+  background: var(--btn-primary-hover);
+}
+
+/* NOVO: Botão Secundário (Cinza) */
+.btn-secondary {
+  background: var(--btn-secondary-bg);
+  color: white;
+}
+.btn-secondary:hover {
+  background: var(--btn-secondary-hover);
+}
+
+/* NOVO: Container dos botões */
+.button-container {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap; 
+}
+
+/* Botão genérico - resetado para não conflitar */
+button {
+  font-family: inherit;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  cursor: pointer;
+}
+
+
+/* Botões específicos */
+.back-button {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #0ea5e9;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  background: transparent;
+  padding: 0; 
+  box-shadow: none; 
+}
+
+.back-button:hover {
+  color: #0284c7;
+  transform: translateX(-4px);
+  background: transparent; 
+  box-shadow: none; 
+}
+
+/* Seções de saída e gamificação */
+.outputs, .gamification {
+  margin-top: 32px;
+  padding: 24px;
+  background: var(--card-bg);
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--primary-gradient);
+  text-align: left;
+}
+
+.gamification {
+  border-left-color: var(--gold-gradient);
+}
+
+/* --- ESTILOS DE INPUT ATUALIZADOS --- */
+input[type="number"],
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+  background: #f8fafc; 
+  margin-bottom: 16px; 
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+  background: white;
+}
+
+/* NOVO: Rótulo (Label) do Input */
+.input-label {
+  display: block;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  text-align: left;
+}
+/* --- FIM DAS ATUALIZAÇÕES DE INPUT --- */
+
+
+/* Acessibilidade */
+.high-contrast {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Animação de entrada suave */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.checkpoint, .outputs, .gamification, .main-content-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* --- ESTILOS MODERNOS ADICIONAIS --- */
+
+/* --- Notificação Toast --- */
+#toast-notification {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+  position: fixed;
+  z-index: 101; 
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#toast-notification.show {
+  visibility: visible;
+  animation: toast-fade-in 0.5s, toast-fade-out 0.5s 2.5s;
+}
+
+@keyframes toast-fade-in {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes toast-fade-out {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+/* --- Barra de Progresso (index.html) --- */
+.progress-container {
+  margin-bottom: 36px;
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid #e2e8f0;
+}
+
+.progress-bar-outer {
+  width: 100%;
+  height: 20px;
+  background-color: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#progress-bar-inner {
+  height: 100%;
+  width: 0%; 
+  background: var(--gold-gradient);
+  border-radius: 10px;
+  transition: width 0.5s ease-out;
+}
+
+#progress-text {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* --- Detalhe no Resumo Final --- */
+.summary-notes {
+  white-space: pre-wrap;
+  text-align: left;
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  margin-bottom: 16px !important;
+  color: #495057;
+}
+
+/* --- Validação Visual de Erro --- */
+.form-field-error {
+  border-color: #dc2626 !important; 
+  background-color: #fff1f2;
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.payback-result {
+  background: var(--card-bg);
+  padding: 20px;
+  margin-top: 24px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--primary-gradient);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: left;
+}
+.payback-result h3 {
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+.payback-result strong {
+  font-size: 1.5rem;
+  color: #2a9d8f; 
+}
+
+/* --- Estilos do Modal de Insígnia --- */
+#modal-backdrop {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+#modal-backdrop.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#modal-content {
+  background: white;
+  padding: 32px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transform: scale(1);
+  animation: modal-pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modal-pop-in {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-badge-icon {
+  font-size: 4.5rem;
+  margin: 16px 0;
+  animation: badge-throb 1.5s infinite ease-in-out;
+}
+
+@keyframes badge-throb {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+#modal-title {
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+#modal-badge-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+#modal-close-btn {
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease; 
+}
+#modal-close-btn:hover {
+  transform: scale(1.05);
+}
+
+/* --- ESTILOS DE INSÍGNIA (Aplicados ao ícone e ao badge) --- */
+.badge-1, .checkpoint-icon-container.badge-1 {
+  background: var(--badge-1);
+  box-shadow: 0 4px 8px rgba(56, 189, 248, 0.3);
+}
+.badge-2, .checkpoint-icon-container.badge-2 {
+  background: var(--badge-2);
+  box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+.badge-3, .checkpoint-icon-container.badge-3 {
+  background: var(--badge-3);
+  box-shadow: 0 4px 8px rgba(124, 58, 237, 0.3);
+}
+.badge-4, .checkpoint-icon-container.badge-4 {
+  background: var(--badge-4);
+  box-shadow: 0 4px 8px rgba(107, 114, 128, 0.3);
+}
+.badge-5, .checkpoint-icon-container.badge-5 {
+  background: var(--badge-5);
+  box-shadow: 0 4px 8px rgba(220, 38, 38, 0.3);
+}

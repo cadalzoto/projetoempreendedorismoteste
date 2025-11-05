@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A Grande Decisão | Projeto Empreendedorismo</title>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <img id="logo-for-pdf" src="logo.png" style="display: none;">
+
+  <div id="toast-notification">...</div>
+
+  <div id="modal-backdrop" class="hidden">
+    <div id="modal-content">
+      <h2 id="modal-title">Insígnia Desbloqueada!</h2>
+      <div class="modal-badge-icon">🏆</div>
+      <p id="modal-badge-name">Nome da Insígnia</p>
+      <button id="modal-close-btn">Continuar</button>
+    </div>
+  </div>
+  
+  <header>
+    <a href="index.html" class="logo">Projeto Empreendedorismo</a>
+    <div class="nav-right">
+      <button id="accessibility-btn" class="icon-button" aria-label="Acessibilidade">
+        <span class="material-symbols-outlined">accessibility_new</span>
+      </button>
+    </div>
+  </header>
+  
+  <main>
+    <div class="back-button" onclick="history.back()">← Voltar aos Checkpoints</div>
+
+    <div class="main-content-card">
+      <h1>Final Boss – A Grande Decisão</h1>
+      <p>Seu plano está completo! Revise e gere seu documento final.</p>
+      
+      <button onclick="generateFinalPDF()" class="btn btn-primary" style="margin-bottom: 24px;">
+        <span class="material-symbols-outlined">picture_as_pdf</span>
+        Baixar Plano de Negócio em PDF
+      </button>
+
+      <div class="outputs" style="margin-top: 0;">
+        <h3>📊 Resumo do Seu Plano</h3>
+        <div id="summary">Carregando...</div>
+      </div>
+    </div> <div class="gamification">
+      <h2>🏆 Insígnia Final Desbloqueada!</h2>
+      <div class="badge badge-5">Empreendedor Visionário</div>
+      <p style="text-align: left; margin-bottom: 0;">Parabéns! Você concluiu todos os checkpoints.</p>
+    </div>
+  </main>
+
+</body>
+</html>

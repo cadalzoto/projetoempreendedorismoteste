@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Construindo o Modelo de Negócio | Projeto Empreendedorismo</title>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div id="toast-notification">...</div>
+
+  <div id="modal-backdrop" class="hidden">
+    <div id="modal-content">
+      <h2 id="modal-title">Insígnia Desbloqueada!</h2>
+      <div class="modal-badge-icon">🏆</div>
+      <p id="modal-badge-name">Nome da Insígnia</p>
+      <button id="modal-close-btn">Continuar</button>
+    </div>
+  </div>
+  
+  <header>
+    <a href="index.html" class="logo">Projeto Empreendedorismo</a>
+    <div class="nav-right">
+      <button id="accessibility-btn" class="icon-button" aria-label="Acessibilidade">
+        <span class="material-symbols-outlined">accessibility_new</span>
+      </button>
+    </div>
+  </header>
+  
+  <main>
+    <div class="back-button" onclick="history.back()">← Voltar aos Checkpoints</div>
+
+    <div class="main-content-card">
+      <h1>3 – Construindo o Modelo de Negócio</h1>
+      <p>Preencha os blocos essenciais do seu modelo:</p>
+      
+      <div class="canvas-grid">
+        <textarea id="valor" placeholder="Proposta de Valor"></textarea>
+        <textarea id="canais" placeholder="Canais de Venda e Comunicação"></textarea>
+        <textarea id="receitas" placeholder="Fontes de Receita"></textarea>
+        <textarea id="custos" placeholder="Estrutura de Custos"></textarea>
+      </div>
+      
+      <div class="button-container">
+        <button onclick="saveAndNext()" class="btn btn-primary">
+          <span class="material-symbols-outlined">rocket_launch</span> Salvar e Ir para o Próximo
+        </button>
+        <button onclick="saveOnly()" class="btn btn-secondary">
+          <span class="material-symbols-outlined">save</span> Salvar e Continuar Depois
+        </button>
+      </div>
+    </div> <div class="outputs"><h3>✅ Saídas Parciais</h3><ul><li>Canvas completo</li><li>Análise SWOT</li><li>Estratégia de vendas</li></ul></div>
+    <div class="gamification"><h3>🏆 Insígnia</h3>
+      <div class="badge badge-3">Arquiteto do Negócio</div>
+    </div>
+  </main>
+
+</body>
+</html>

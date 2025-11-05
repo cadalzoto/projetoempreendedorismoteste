@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gerenciando os Recursos | Projeto Empreendedorismo</title>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div id="toast-notification">...</div>
+
+  <div id="modal-backdrop" class="hidden">
+    <div id="modal-content">
+      <h2 id="modal-title">Insígnia Desbloqueada!</h2>
+      <div class="modal-badge-icon">🏆</div>
+      <p id="modal-badge-name">Nome da Insígnia</p>
+      <button id="modal-close-btn">Continuar</button>
+    </div>
+  </div>
+  
+  <header>
+    <a href="index.html" class="logo">Projeto Empreendedorismo</a>
+    <div class="nav-right">
+      <button id="accessibility-btn" class="icon-button" aria-label="Acessibilidade">
+        <span class="material-symbols-outlined">accessibility_new</span>
+      </button>
+    </div>
+  </header>
+  
+  <main>
+    <div class="back-button" onclick="history.back()">← Voltar aos Checkpoints</div>
+
+    <div class="main-content-card">
+      <h1>4 – Gerenciando os Recursos</h1>
+      <p>Simule cenários financeiros para seu negócio:</p>
+      
+      <label>Investimento Inicial (R$): <input type="number" id="investimento" placeholder="Ex: 20000"></label><br><br>
+      <label>Custos Mensais Fixos (R$): <input type="number" id="fixos" placeholder="Ex: 5000"></label><br><br>
+      <label>Receita Mensal Estimada (R$): <input type="number" id="receita" placeholder="Ex: 8000"></label><br><br>
+
+      <div class="payback-result">
+        <h3>Tempo de Retorno (Payback):</h3>
+        <strong id="payback-display">Preencha os valores...</strong>
+      </div>
+
+      <div class="button-container">
+        <button onclick="saveAndNext()" class="btn btn-primary">
+          <span class="material-symbols-outlined">rocket_launch</span> Salvar e Ir para a Grande Decisão
+        </button>
+        <button onclick="saveOnly()" class="btn btn-secondary">
+          <span class="material-symbols-outlined">save</span> Salvar e Finalizar Depois
+        </button>
+      </div>
+    </div> <div class="outputs"><h3>✅ Saídas Parciais</h3><ul><li>Estrutura financeira</li><li>Projeções de cenários</li><li>Indicadores principais</li></ul></div>
+    <div class="gamification"><h3>🏆 Insígnia</h3>
+      <div class="badge badge-4">Guardião dos Recursos</div>
+    </div>
+  </main>
+
+</body>
+</html>
